@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .fade-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .fade {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        .pulse-on-hover:hover {
+            animation: pulse 0.6s ease-in-out infinite;
+        }
+    </style>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-black text-white">
+    <!-- Header -->
+    <header class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold pulse-on-hover">
+                <a href="#" class="hover:text-gray-400 transition-colors">Portfolio</a>
+            </div>
+            <!-- Mobile menu button -->
+            <div class="block md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Navbar -->
+            <nav id="navbar" class="hidden md:flex space-x-4">
+                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                    <li>
+                        <a href="#Home" class="hover:text-gray-400 transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <a href="#Projects" class="hover:text-gray-400 transition-colors">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#About Me" class="hover:text-gray-400 transition-colors">About Me</a>
+                    </li>
+                    <li>
+                        <a href="#Contact Us" class="hover:text-gray-400 transition-colors">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="flex flex-col md:flex-row items-center justify-center p-12 bg-gradient-to-r from-gray-800 to-gray-700 text-white fade-up" id="Home">
+        <!-- Photo -->
+        <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-700 shadow-lg transform hover:scale-110 transition-transform duration-500">
+            <img src="photo for clubs.jpg" alt="Profile Photo" class="w-full h-full object-cover">
+        </div>
+        <!-- Text -->
+        <div class="mt-6 md:mt-0 md:ml-12 text-center md:text-left fade-up">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white">Pavan Kalyan Manda</h1>
+            <p class="text-xl text-gray-300 mt-2">Crafting beautiful and functional web experiences as a passionate website developer.</p>
+            <button  class="mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg focus:outline-none transition-all duration-300 ease-in-out transform hover:scale-110"><a href="#Projects" >View My Work</a></button>
+            
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="p-12 bg-gray-900 text-white fade-up" id="About Me">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade">
+                    <h3 class="text-2xl font-semibold mb-6">Skills & Expertise</h3>
+                    <p class="text-gray-300 mb-6">I specialize in a wide range of web development technologies and tools, including:</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-3">
+                        <li><span class="text-blue-500">HTML</span>, <span class="text-blue-500">CSS</span>, and <span class="text-blue-500">JavaScript</span></li>
+                        <li><span class="text-blue-500">React JS</span> for building dynamic user interfaces</li>
+                        <li><span class="text-blue-500">Node JS</span> for server-side development</li>
+                        <li><span class="text-blue-500">MongoDB</span> and <span class="text-blue-500">SQL</span> for database management</li>
+                        <li>And many more cutting-edge technologies</li>
+                    </ul>
+                </div>
+                <div class="fade">
+                    <h3 class="text-2xl font-semibold mb-6">My Approach</h3>
+                    <p class="text-gray-300 mb-6">I believe in creating websites that not only look great but also provide a seamless user experience. My approach to web development involves:</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-3">
+                        <li>Understanding client requirements deeply</li>
+                        <li>Designing user-centric interfaces</li>
+                        <li>Writing clean, maintainable code</li>
+                        <li>Ensuring responsiveness across all devices</li>
+                        <li>Continuous learning and staying updated with the latest trends</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="p-12 bg-gray-800 text-white fade-up" id="Projects">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Project 1: Car Wash App -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500">
+                    <h3 class="text-2xl font-semibold mb-4">Car Wash App</h3>
+                    <p class="text-gray-300 mb-4">A mobile app that allows users to book car wash services with ease, track their appointments, and pay online.</p>
+                    <p class="text-gray-400"><strong>Technologies:</strong> React Native, Node.js, MongoDB, Express.js</p>
+                </div>
+                <!-- Project 2: Aerospectra -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500">
+                    <h3 class="text-2xl font-semibold mb-4">Aerospectra</h3>
+                    <p class="text-gray-300 mb-4">An IoT-based project that utilizes GPS, temperature, pressure, and altitude data for aerospace applications.</p>
+                    <p class="text-gray-400"><strong>Technologies:</strong> Arduino, GPS Module, Sensor Data Processing, C/C++</p>
+                </div>
+                <!-- Project 3: CANSAT Satellite -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500">
+                    <h3 class="text-2xl font-semibold mb-4">CANSAT Satellite</h3>
+                    <p class="text-gray-300 mb-4">A satellite project involving the design and deployment of a CANSAT from a height of 1000m to collect data on temperature, pressure, and altitude.</p>
+                    <p class="text-gray-400"><strong>Technologies:</strong> Embedded Systems, Python, Sensor Integration, Data Analysis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Contact Us Section -->
+        <section class="p-12 bg-gray-800 text-white fade-up" id="Contact Us">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Contact Us</h2>
+                <div class="max-w-lg mx-auto bg-gray-700 p-8 rounded-lg shadow-lg">
+                    <form action="https://formspree.io/f/xovayykk" method="POST" class="space-y-6">
+                        <!-- Name Field -->
+                        <div>
+                            <label for="name" class="block text-lg font-medium text-gray-300">Name</label>
+                            <input type="text" id="name" name="name" required
+                                   class="mt-1 block w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-lg font-medium text-gray-300">Email</label>
+                            <input type="email" id="email" name="_replyto" required
+                                   class="mt-1 block w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <!-- Phone Number Field -->
+                        <div>
+                            <label for="phone" class="block text-lg font-medium text-gray-300">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required
+                                   class="mt-1 block w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit"
+                                    class="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
